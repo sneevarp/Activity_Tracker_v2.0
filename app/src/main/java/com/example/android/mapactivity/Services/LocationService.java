@@ -1,9 +1,7 @@
-package com.example.android.mapactivity;
+package com.example.android.mapactivity.Services;
 
-import android.Manifest;
 import android.app.Service;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.GpsStatus;
 import android.location.Location;
@@ -29,8 +27,8 @@ public class LocationService extends Service implements LocationListener, GpsSta
     boolean isLocationManagerUpdatingLocation;
 
 
-    ArrayList<Location> locationList;
-    boolean isLogging;
+    public ArrayList<Location> locationList;
+    public boolean isLogging;
 
     public LocationService() {
 

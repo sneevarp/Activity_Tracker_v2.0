@@ -23,14 +23,14 @@
         android:appComponentFactory="whateverString"
         >
         <service
-            android:name=".BackgroundDetectedActivitiesService"
+            android:name=".Services.BackgroundDetectedActivitiesService"
             android:enabled="true"
             android:exported="true"></service>
         <service
-            android:name=".DetectedActivitiesIntentService"
+            android:name=".Services.DetectedActivitiesIntentService"
             android:exported="false" />
         <service
-            android:name=".LocationService"
+            android:name=".Services.LocationService"
             android:enabled="true"
             android:exported="false" />
         <!--
@@ -47,10 +47,10 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
+            android:label="@string/title_activity_maps"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -1,4 +1,4 @@
-package com.example.android.mapactivity;
+package com.example.android.mapactivity.Services;
 
 import android.app.PendingIntent;
 import android.app.Service;
