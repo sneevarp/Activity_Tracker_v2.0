@@ -22,6 +22,24 @@
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
         <activity
+            android:name=".ui.list.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.Forecast">
+        </activity>
+
+        <!--The manifest entry for our DetailActivity. Each Activity requires a manifest entry-->
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:label="Detail Activity"
+            android:parentActivityName=".ui.list.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.list.MainActivity"/>
+
+        </activity>
+        <activity
             android:name=".FullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_fullscreen"
@@ -38,6 +56,18 @@
             android:name=".Services.LocationService"
             android:enabled="true"
             android:exported="false" />
+        <service
+            android:name=".data.network.SunshineSyncIntentService"
+            android:exported="false" />
+
+        <!-- This is the Service declaration used in conjunction with FirebaseJobDispatcher -->
+        <service
+            android:name=".data.network.SunshineFirebaseJobService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

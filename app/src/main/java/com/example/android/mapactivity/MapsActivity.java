@@ -32,6 +32,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.android.mapactivity.ui.list.MainActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.navigation.NavigationView;
 
@@ -202,10 +203,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_todo) {
+        if (id == R.id.nav_tips) {
             Intent intent=new Intent(this,FullscreenActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_weather) {
+            Intent intent=new Intent(this, MainActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_slideshow) {
 
